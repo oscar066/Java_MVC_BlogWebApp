@@ -4,6 +4,8 @@
 
 This is a web app built with Java Spring Initializer MVC and JPA using an embedded H2 database. The app allows content creators to create, edit, and delete articles. 
 
+Note: The project is not complete yet 
+
 ## Installation
 
 1. Clone the repository
@@ -20,7 +22,12 @@ This is a web app built with Java Spring Initializer MVC and JPA using an embedd
 ## Screenshots
 
 ### Home Page
-![Home Page](screenshots/home-page.png)
+![Home Page](screenshot1.png)
+
+![Home Page](screenshot2.png)
+
+### Contact Page
+![contact Page](screenshot3.png)
 
 ### Create New Article Page
 ![Create New Article Page](screenshots/create-article-page.png)
