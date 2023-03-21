@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/" class="logo">My Blog</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a th:href="@{/create}">Write</a></li>
+            <li><a th:href="@{/contact}">Contact</a></li>
+            <li><a th:href="@{/login}" class="btn">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="hero">
+    <div class="hero-inner">
+        <h1>Welcome to My Blog</h1>
+        <p>Discover amazing stories from our community of writers and bloggers</p>
+    </div>
+</section>
+<section class="blogs">
+    <! -- <h2>Recent Blog Posts</h2> -->
+    <ul>
+        <li th:each="blog : ${blogs}">
+            <div class="blog">
+                <a th:href="@{/blog/{id}(id=${blog.id})}" class="blog-title" th:text="${blog.title}"></a>
+                <div class="blog-meta">
+                    <span class="blog-date" th:text="${blog.date}"></span>
+                </div>
+                <p class="blog-excerpt" th:text="${blog.excerpt}"></p>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<!-- Dummy articles -->
+<section class="blogs">
+    <h2>Trending Articles</h2>
+    <ul>
+        <li>
+            <div class="blog">
+                <a href="#" class="blog-title">Why They Always Cheat on You? The Shocking Truth Revealed!</a>
+                <div class="blog-meta">
+                    <span class="blog-date">March 15, 2023</span>
+                </div>
+                <p class="blog-excerpt">Do you find yourself constantly asking this question? Have you been in multiple relationships where your partner has cheated on you? It's a painful and confusing experience that can leave you feeling like you're doing something wrong. But the truth is, there are underlying reasons why some people cheat, and it has nothing to do with you.</p>
+            </div>
+        </li>
+        <li>
+            <div class="blog">
+                <a href="#" class="blog-title">The Future is Here: How AI is Revolutionizing the World</a>
+                <div class="blog-meta">
+                    <span class="blog-date">March 15, 2023</span>
+                </div>
+                <p class="blog-excerpt">Artificial intelligence (AI) is rapidly transforming our world, from the way we work and communicate to the products we use every day. As technology continues to advance, it's becoming increasingly clear that AI is going to play a major role in shaping the future..</p>
+            </div>
+        </li>
+        <li>
+            <div class="blog">
+                <a href="#" class="blog-title">Eating Well on a Shoestring: Top Tips for Students to Eat Healthy on a Budget</a>
+                <div class="blog-meta">
+                    <span class="blog-date">March 10, 2023</span>
+                </div>
+                <p class="blog-excerpt">Eating healthy is essential for maintaining good health and reducing the risk of chronic diseases. However, the misconception that healthy eating is expensive is a significant barrier for many people. The cost of fresh fruits, vegetables, and lean proteins can add up quickly, making it challenging to stick to a healthy diet while on a budget. But eating healthy doesn't have to break the bank. With a little planning and creativity, it is possible to eat healthy and save money at the same time..</p>
+            </div>
+        </li>
+        <li>
+            <div class="blog">
+                <a href="#" class="blog-title">How to Get Started with Yoga</a>
+                <div class="blog-meta">
+                    <span class="blog-date">March 5, 2023</span>
+                </div>
+                <p class="blog-excerpt">Are you feeling stressed out or disconnected from your body? It might be time to give yoga a try! Yoga is a mind-body practice that has been around for thousands of years and is known for its ability to promote relaxation, reduce stress, and improve overall physical and mental health. If you're new to yoga, getting started can feel overwhelming, but with a few simple tips, you can easily begin your yoga journey.</p>
+            </div>
+        </li>
+        <li>
+            <div class="blog">
+                <a href="#" class="blog-title">Why Reading is Important for Your Brain</a>
+                <div class="blog-meta">
+                    <span class="blog-date">February 24, 2023</span>
+                </div>
+                <p class="blog-excerpt">Reading is not only an enjoyable pastime, but it is also an essential activity that is vital for brain development and overall mental health. Here are some of the reasons why reading is important for your brain:.</p>
+            </div>
+        </li>
+        <li>
+            <div class="blog">
+                <a href="#" class="blog-title">How to Stay Motivated When You're Feeling Down</a>
+                <div class="blog-meta">
+                    <span class="blog-date">February 22, 2023</span>
+                </div>
+                <p class="blog-excerpt">Feeling down is a common experience that can make it difficult to stay motivated and focused on your goals. However, there are several strategies that you can use to stay motivated even when you're feeling down..</p>
+            </div>
+        </li>
+        <li>
+            <div class="blog">
+                <a href="#" class="blog-title">The Benefits of Meditation for Your Health</a>
+                <div class="blog-meta">
+                    <span class="blog-date">February 7, 2023</span>
+                </div>
+                <p class="blog-excerpt">Meditation is an ancient practice that has gained popularity in recent years due to its numerous benefits for physical and mental health. Meditation is a technique that involves focusing your attention on a particular object, thought, or activity to achieve a calm and clear state of mind.
+
+                    Here are some of the most significant benefits of meditation for your health:</p>
+            </div>
+        </li>
+    </ul>
+</section>
+
+</body>
+<footer class="footer">
+    <div class="container">
+        <p class="text-center text-muted">&copy; 2023 My Blog. All rights reserved.</p>
+        <p> Created by Oscar , Martin , Naomi , Abigael , Glory </p>
+    </div>
+</footer>
+</html>
