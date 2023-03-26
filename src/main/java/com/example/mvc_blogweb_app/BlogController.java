@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/blog")
+@RequestMapping("/blog-posts")
 public class BlogController {
     @Autowired
     private BlogPostService blogPostService;
@@ -29,13 +29,13 @@ public class BlogController {
         return "blog-post";
     }
 
-    @GetMapping("/create")
+    @GetMapping("/blog-post-form")
     public String showCreateForm(Model model) {
         model.addAttribute("blogPost", new BlogPost());
         return "blog-post-form";
     }
 
-    @PostMapping("/create")
+    @PostMapping("/blog-post-form")
     public String createBlogPost(@Validated @ModelAttribute("blogPost") BlogPost blogPost, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "blog-post-form";

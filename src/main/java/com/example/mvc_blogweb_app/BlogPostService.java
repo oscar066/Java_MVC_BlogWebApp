@@ -13,6 +13,7 @@ public class BlogPostService {
     private BlogPostRepository blogPostRepository;
 
     public List<BlogPost> getAllBlogPosts() {
+
         return blogPostRepository.findAll();
     }
 
@@ -30,6 +31,7 @@ public class BlogPostService {
 
 
     public BlogPost createBlogPost(BlogPost blogPost) {
+
         return blogPostRepository.save(blogPost);
     }
 

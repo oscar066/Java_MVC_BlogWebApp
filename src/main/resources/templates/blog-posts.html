@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog Posts</title>
+    <style>
+        /* Set the theme color */
+        :root {
+            --theme-color: #3f51b5;
+        }
+        /* Style the headings and links */
+        h1, h2, a {
+            color: var(--theme-color);
+        }
+        /* Style the create button */
+        .create-button {
+            background-color: var(--theme-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .create-button:hover {
+            background-color: #303f9f;
+        }
+    </style>
+</head>
+<body>
+<h1>Blog Posts</h1>
+<ul>
+    <li th:each="post : ${blogPosts}">
+        <h2 th:text="${post.title}"></h2>
+        <p th:text="${post.content}"></p>
+        <p>Published on <span th:text="${#temporals.format(post.publishedDate, 'dd-MM-yyyy')}"></span></p>
+        <a th:href="@{/blog/__${post.id}__}" style="color: var(--theme-color)">Read more</a>
+    </li>
+</ul>
+<a th:href="@{/blog-post-form}" class="create-button">Create New Blog Post</a>
+</body>
+</html>

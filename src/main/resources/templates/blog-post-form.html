@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:if="${blogPost.id != null}" th:text="'Edit Blog Post - ' + ${blogPost.title}" th:unless="${blogPost.id == null}">Create New Blog Post</title>
+  <style>
+        /* Set the theme color */
+        :root {
+            --theme-color: #3f51b5;
+        }
+        /* Style the form elements */
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--theme-color);
+        }
+        input[type="text"], textarea {
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+        input[type="submit"] {
+            background-color: var(--theme-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #303f9f;
+        }
+        /* Style the error messages */
+        .error-message {
+            color: red;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${blogPost.id != null} ? 'Edit Blog Post' : 'Create New Blog Post'"></h1>
+<form method="post" th:object="${blogPost}">
+  <input type="hidden" th:field="*{id}">
+  <label>Title:</label>
+  <input type="text" th:field="*{title}">
+  <span class="error-message" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+  <label>Content:</label>
+  <textarea rows="10" th:field="*{content}"></textarea>
+  <span class="error-message" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
+  <input type="submit" value="Save">
+</form>
+</body>
+</html>
